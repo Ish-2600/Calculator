@@ -74,6 +74,21 @@ void test_multiply_negative_numbers(void) {
     TEST_ASSERT_EQUAL(12, multiply(-3, -4));
 }
 
+//Division
+void test_divide_positive_numbers(void) {
+    TEST_ASSERT_EQUAL(5, divide(10, 2));
+    TEST_ASSERT_EQUAL(3, divide(9, 3));
+}
+
+void test_divide_negative_numbers(void) {
+    TEST_ASSERT_EQUAL(-2, divide(-10, 5));
+    TEST_ASSERT_EQUAL(2, divide(-10, -5));
+}
+
+void test_divide_by_zero(void) {
+    TEST_ASSERT_EQUAL(0, divide(10, 0)); // choose behavior: return 0
+}
+
 int main(void) {
     UNITY_BEGIN();
     //Addition
@@ -90,6 +105,10 @@ int main(void) {
     RUN_TEST(test_multiply_positive_numbers);
     RUN_TEST(test_multiply_by_zero);
     RUN_TEST(test_multiply_negative_numbers);
+    //Division
+    RUN_TEST(test_divide_positive_numbers);
+    RUN_TEST(test_divide_negative_numbers);
+    RUN_TEST(test_divide_by_zero);
 
     RUN_TEST(test_add_overflow);
     RUN_TEST(test_add_underflow);
