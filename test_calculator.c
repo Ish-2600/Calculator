@@ -59,6 +59,21 @@ void test_subtract_zero(void) {
     TEST_ASSERT_EQUAL(-10, subtract(0, 10));
 }
 
+//Multiplication
+void test_multiply_positive_numbers(void) {
+    TEST_ASSERT_EQUAL(6, multiply(2, 3));
+}
+
+void test_multiply_by_zero(void) {
+    TEST_ASSERT_EQUAL(0, multiply(10, 0));
+    TEST_ASSERT_EQUAL(0, multiply(0, 10));
+}
+
+void test_multiply_negative_numbers(void) {
+    TEST_ASSERT_EQUAL(-12, multiply(-3, 4));
+    TEST_ASSERT_EQUAL(12, multiply(-3, -4));
+}
+
 int main(void) {
     UNITY_BEGIN();
     //Addition
@@ -71,6 +86,10 @@ int main(void) {
     RUN_TEST(test_subtract_positive_and_negative_numbers);
     RUN_TEST(test_subtract_negative_numbers);
     RUN_TEST(test_subtract_zero);
+    //Multipication
+    RUN_TEST(test_multiply_positive_numbers);
+    RUN_TEST(test_multiply_by_zero);
+    RUN_TEST(test_multiply_negative_numbers);
 
     RUN_TEST(test_add_overflow);
     RUN_TEST(test_add_underflow);
